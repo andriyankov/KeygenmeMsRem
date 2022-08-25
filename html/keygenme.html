@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Keygenme</title>
+    <style>
+        body {
+            background-color: #876ED7;
+            color: #200772;
+        }
+        .content {
+        }
+    </style>
+    <script src="keygenme.js"></script>
+    <script>
+        function checkSerialByUsername(theForm) {
+            var username = theForm.elements['username'].value;
+            var serial = theForm.elements['serial'].value;
+            document.getElementById("resultMsg").value = checkSerial(username, serial);
+        }
+    </script>
+</head>
+<body>
+    <div class="content">
+        <div class="input">
+            <form id="input-data" method="POST">
+                <fieldset>
+                    <legend>Input data</legend>
+                    <label>Username: <input type="text" name="username" required>
+                    </label>
+                    <br>
+                    <label>Serial number: <input type="text" name="serial" required>
+                    </label>
+                    <br>
+                    <input type="button" name="btn-check" value="Check" onclick="checkSerialByUsername(this.form);">
+                </fieldset>
+            </form>
+        </div>
+        <div class="output">
+            <fieldset>
+                <label>Result: <input type="text" id="resultMsg" name="result-message">
+                </label>
+            </fieldset>
+        </div>
+    </div>
+</body>
+</html>
